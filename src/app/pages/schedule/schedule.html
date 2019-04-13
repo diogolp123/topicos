@@ -25,29 +25,19 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <form #coletasForm="ngForm">
+  <form #coletasForm="ngForm" novalidate>
     <ion-list>
       <ion-item>
           <ion-label position="stacked" color="primary">Volume</ion-label>
-          <ion-input [(ngModel)]="volume" type="text" spellcheck="false" autocapitalize="off"
+          <ion-input [(ngModel)]="coletas.volume" name="volume" type="text" #volume="ngModel" spellcheck="false" autocapitalize="off"
             required>
           </ion-input>
-          <ion-text color="danger">
-              <p [hidden]="volume.valid || submitted == false" padding-left>
-                  Volume is required
-                </p>
-          </ion-text>
         </ion-item>
         <ion-item>
           <ion-label position="stacked" color="primary">Temperatura</ion-label>
-          <ion-input [(ngModel)]="temperatura" type="text" spellcheck="false" autocapitalize="off"
+          <ion-input [(ngModel)]="coletas.temperatura" name="temperatura" type="text" #temperatura="ngModel" spellcheck="false" autocapitalize="off"
           required>
           </ion-input>
-          <ion-text color="danger">
-            <p [hidden]="temperatura.valid || submitted == false" padding-left>
-              Temperatura is required
-            </p>
-          </ion-text>
         </ion-item>
       </ion-list>
 

@@ -21,13 +21,6 @@
           required>
         </ion-input>
       </ion-item>
-
-      <ion-text color="danger">
-        <p [hidden]="username.valid || submitted == false" padding-left>
-          Username is required
-        </p>
-      </ion-text>
-
       <ion-item>
         <ion-label position="stacked" color="primary">Password</ion-label>
         <ion-input [(ngModel)]="login.password" name="password" type="password" #password="ngModel" required>
