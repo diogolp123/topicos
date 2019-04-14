@@ -3,6 +3,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 
 import { PopoverPage } from '../about-popover/about-popover';
+import { ColetasOptions } from '../../interfaces/coletas-options';
 
 @Component({
   selector: 'page-about',
@@ -11,8 +12,13 @@ import { PopoverPage } from '../about-popover/about-popover';
 })
 export class AboutPage {
   conferenceDate = '2047-05-17';
+  valores: ColetasOptions[] = [];
 
   constructor(public popoverCtrl: PopoverController) { }
+
+  ngOnInit() {
+    this.valores = JSON.parse(window.localStorage.getItem("Coletas"));
+  }
 
   async presentPopover(event: Event) {
     const popover = await this.popoverCtrl.create({

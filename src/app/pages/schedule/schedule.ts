@@ -12,13 +12,16 @@ import { Router } from '@angular/router';
 })
 export class SchedulePage implements OnInit {
   coletas: ColetasOptions = { volume: '', temperatura: '' };
+  valorTemp: any[] = [];
   constructor(
     private http: HttpClient,
     public router: Router
   ) { }
 
   ngOnInit() {
-
+    if (window.localStorage.getItem("Coletas") == null){
+      window.localStorage.setItem("Coletas", JSON.stringify(this.valorTemp));
+    }
   }
 
   onRegister(form: NgForm) {
@@ -31,6 +34,16 @@ export class SchedulePage implements OnInit {
     const options = { headers: headers };
 
     if (form.valid) {
+
+      var tester: String = window.localStorage.getItem("Coletas");
+      if (tester != "undefined"){
+        this.valorTemp = JSON.parse(window.localStorage.getItem("Coletas"));
+      }
+
+      this.valorTemp.push(this.coletas);
+      window.localStorage.removeItem("Coletas");
+      window.localStorage.setItem("Coletas", JSON.stringify(this.valorTemp));
+
     this.http.post('https://volutech.herokuapp.com/api/coletas', this.coletas).subscribe(data => {
         this.router.navigateByUrl('/app/tabs/about');
         console.log(data);
