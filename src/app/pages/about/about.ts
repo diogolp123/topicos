@@ -2,7 +2,6 @@ import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 
 import { PopoverController } from '@ionic/angular';
 
-import { PopoverPage } from '../about-popover/about-popover';
 import { ColetasOptions } from '../../interfaces/coletas-options';
 
 @Component({
@@ -20,11 +19,4 @@ export class AboutPage implements OnInit {
     this.valores = JSON.parse(window.localStorage.getItem('Coletas'));
   }
 
-  async presentPopover(event: Event) {
-    const popover = await this.popoverCtrl.create({
-      component: PopoverPage,
-      event
-    });
-    await popover.present();
-  }
 }

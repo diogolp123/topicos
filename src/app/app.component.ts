@@ -5,8 +5,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Events, MenuController, Platform } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 
-import { UserData } from './providers/user-data';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,27 +14,16 @@ import { UserData } from './providers/user-data';
 export class AppComponent implements OnInit {
   appPages = [
     {
-      title: 'Schedule',
+      title: 'Cadastro de coletas',
       url: '/app/tabs/schedule',
       icon: 'calendar'
     },
     {
-      title: 'Speakers',
-      url: '/app/tabs/speakers',
-      icon: 'contacts'
-    },
-    {
-      title: 'Map',
-      url: '/app/tabs/map',
-      icon: 'map'
-    },
-    {
-      title: 'About',
+      title: 'Lista de coletas',
       url: '/app/tabs/about',
       icon: 'information-circle'
     }
   ];
-  loggedIn = false;
 
   constructor(
     private events: Events,
@@ -45,15 +32,12 @@ export class AppComponent implements OnInit {
     private router: Router,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private storage: Storage,
-    private userData: UserData
+    private storage: Storage
   ) {
     this.initializeApp();
   }
 
   ngOnInit() {
-    this.checkLoginStatus();
-    this.listenForLoginEvents();
   }
 
   initializeApp() {
@@ -61,43 +45,5 @@ export class AppComponent implements OnInit {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
-  }
-
-  checkLoginStatus() {
-    return this.userData.isLoggedIn().then(loggedIn => {
-      return this.updateLoggedInStatus(loggedIn);
-    });
-  }
-
-  updateLoggedInStatus(loggedIn: boolean) {
-    setTimeout(() => {
-      this.loggedIn = loggedIn;
-    }, 300);
-  }
-
-  listenForLoginEvents() {
-    this.events.subscribe('user:login', () => {
-      this.updateLoggedInStatus(true);
-    });
-
-    this.events.subscribe('user:signup', () => {
-      this.updateLoggedInStatus(true);
-    });
-
-    this.events.subscribe('user:logout', () => {
-      this.updateLoggedInStatus(false);
-    });
-  }
-
-  logout() {
-    this.userData.logout().then(() => {
-      return this.router.navigateByUrl('/app/tabs/schedule');
-    });
-  }
-
-  openTutorial() {
-    this.menu.enable(false);
-    this.storage.set('ion_did_tutorial', false);
-    this.router.navigateByUrl('/tutorial');
   }
 }

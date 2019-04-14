@@ -42,11 +42,7 @@ export class SchedulePage implements OnInit {
       this.valorTemp.push(this.coletas);
       window.localStorage.removeItem('Coletas');
       window.localStorage.setItem('Coletas', JSON.stringify(this.valorTemp));
-
-    this.http.post('https://volutech.herokuapp.com/api/coletas', this.coletas).subscribe(data => {
-        this.router.navigateByUrl('/app/tabs/about');
-        console.log(data);
-      });
+      this.router.navigateByUrl('/app/tabs/about');
     }
   }
 }

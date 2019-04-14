@@ -1,28 +1,8 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-
-    <ion-segment [(ngModel)]="segment" (ionChange)="updateSchedule()">
-      <ion-segment-button value="all">
-        All
-      </ion-segment-button>
-      <ion-segment-button value="favorites">
-        Favorites
-      </ion-segment-button>
-    </ion-segment>
-
-    <ion-buttons slot="end">
-      <ion-button (click)="presentFilter()">
-        <ion-icon slot="icon-only" name="options"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+  <ion-toolbar slot="start">
+    <h3>Cadastro de coletas</h3>
   </ion-toolbar>
 
-  <ion-toolbar>
-    <ion-searchbar [(ngModel)]="queryText" (ionChange)="updateSchedule()" placeholder="Search"></ion-searchbar>
-  </ion-toolbar>
 </ion-header>
 <ion-content>
   <form #coletasForm="ngForm" novalidate>
@@ -47,22 +27,4 @@
         </ion-col>
       </ion-row>
     </form>
-
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end" #fab>
-    <ion-fab-button><ion-icon name="share"></ion-icon></ion-fab-button>
-    <ion-fab-list side="top">
-      <ion-fab-button color="vimeo" (click)="openSocial('Vimeo', fab)">
-        <ion-icon name="logo-vimeo"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button color="google" (click)="openSocial('Google+', fab)">
-        <ion-icon name="logo-googleplus"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button color="twitter" (click)="openSocial('Twitter', fab)">
-        <ion-icon name="logo-twitter"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button color="facebook" (click)="openSocial('Facebook', fab)">
-        <ion-icon name="logo-facebook"></ion-icon>
-      </ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
 </ion-content>
