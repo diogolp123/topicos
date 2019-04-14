@@ -19,13 +19,12 @@ export class SchedulePage implements OnInit {
   ) { }
 
   ngOnInit() {
-    if (window.localStorage.getItem("Coletas") == null){
-      window.localStorage.setItem("Coletas", JSON.stringify(this.valorTemp));
+    if (window.localStorage.getItem('Coletas') == null) {
+      window.localStorage.setItem('Coletas', JSON.stringify(this.valorTemp));
     }
   }
 
   onRegister(form: NgForm) {
-  // tslint:disable-next-line:prefer-const
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
@@ -35,14 +34,14 @@ export class SchedulePage implements OnInit {
 
     if (form.valid) {
 
-      var tester: String = window.localStorage.getItem("Coletas");
-      if (tester != "undefined"){
-        this.valorTemp = JSON.parse(window.localStorage.getItem("Coletas"));
+      const tester: String = window.localStorage.getItem('Coletas');
+      if (tester !== 'undefined') {
+        this.valorTemp = JSON.parse(window.localStorage.getItem('Coletas'));
       }
 
       this.valorTemp.push(this.coletas);
-      window.localStorage.removeItem("Coletas");
-      window.localStorage.setItem("Coletas", JSON.stringify(this.valorTemp));
+      window.localStorage.removeItem('Coletas');
+      window.localStorage.setItem('Coletas', JSON.stringify(this.valorTemp));
 
     this.http.post('https://volutech.herokuapp.com/api/coletas', this.coletas).subscribe(data => {
         this.router.navigateByUrl('/app/tabs/about');
