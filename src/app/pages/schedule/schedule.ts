@@ -1,9 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { stringify } from 'querystring';
-import { ColetasOptions } from '../../interfaces/coletas-options';
 import { Router } from '@angular/router';
+
+import { ColetasOptions } from '../../interfaces/coletas-options';
 
 @Component({
   selector: 'page-schedule',

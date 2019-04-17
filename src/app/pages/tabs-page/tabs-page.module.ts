@@ -5,12 +5,12 @@ import { IonicModule } from '@ionic/angular';
 import { TabsPage } from './tabs-page';
 import { TabsPageRoutingModule } from './tabs-page-routing.module';
 
-import { AboutModule } from '../about/about.module';
+import { CadastroModule } from '../cadastro/cadastro.module';
 import { ScheduleModule } from '../schedule/schedule.module';
 
 @NgModule({
   imports: [
-    AboutModule,
+    CadastroModule,
     CommonModule,
     IonicModule,
     ScheduleModule,

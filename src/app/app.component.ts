@@ -16,12 +16,12 @@ export class AppComponent implements OnInit {
     {
       title: 'Cadastro de coletas',
       url: '/app/tabs/schedule',
-      icon: 'calendar'
+      icon: 'create'
     },
     {
       title: 'Lista de coletas',
-      url: '/app/tabs/about',
-      icon: 'information-circle'
+      url: '/app/tabs/cadastro',
+      icon: 'thermometer'
     }
   ];
 

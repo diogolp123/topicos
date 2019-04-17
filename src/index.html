@@ -16,11 +16,16 @@
 
   <base href="/">
 
-  <link rel="icon" type="image/x-icon" href="assets/img/appicon.png">
-
-  <link rel="apple-touch-icon" href="assets/img/appicon.png">
-
   <link rel="manifest" href="manifest.json">
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.error('Error', err));
+    }
+  </script>
+
 </head>
 
 <body>

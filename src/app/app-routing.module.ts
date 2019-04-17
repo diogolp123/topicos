@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/app/tabs/about',
+    redirectTo: '/app/tabs/cadastro',
     pathMatch: 'full'
   },
   {

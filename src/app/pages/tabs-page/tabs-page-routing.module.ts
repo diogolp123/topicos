@@ -19,11 +19,11 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'about',
+        path: 'cadastro',
         children: [
           {
             path: '',
-            loadChildren: '../about/about.module#AboutModule'
+            loadChildren: '../cadastro/cadastro.module#CadastroModule'
           }
         ]
       },
