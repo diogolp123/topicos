@@ -6,14 +6,14 @@ import { TabsPage } from './tabs-page';
 import { TabsPageRoutingModule } from './tabs-page-routing.module';
 
 import { CadastroModule } from '../cadastro/cadastro.module';
-import { ScheduleModule } from '../schedule/schedule.module';
+import { ColetasModule } from '../coletas/coletas.module';
 
 @NgModule({
   imports: [
     CadastroModule,
     CommonModule,
     IonicModule,
-    ScheduleModule,
+    ColetasModule,
     TabsPageRoutingModule
   ],
   declarations: [

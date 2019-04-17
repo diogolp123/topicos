@@ -6,11 +6,11 @@ import { Router } from '@angular/router';
 import { ColetasOptions } from '../../interfaces/coletas-options';
 
 @Component({
-  selector: 'page-schedule',
-  templateUrl: 'schedule.html',
-  styleUrls: ['./schedule.scss'],
+  selector: 'page-coletas',
+  templateUrl: 'coletas.html',
+  styleUrls: ['./coletas.scss'],
 })
-export class SchedulePage implements OnInit {
+export class ColetasPage implements OnInit {
   coletas: ColetasOptions = { volume: '', temperatura: '' };
   valorTemp: any[] = [];
   constructor(
@@ -42,7 +42,7 @@ export class SchedulePage implements OnInit {
       this.valorTemp.push(this.coletas);
       window.localStorage.removeItem('Coletas');
       window.localStorage.setItem('Coletas', JSON.stringify(this.valorTemp));
-      this.router.navigateByUrl('/app/tabs/about');
+      this.router.navigateByUrl('/app/tabs/coletas');
     }
   }
 }

@@ -3,21 +3,21 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
-import { SchedulePage } from './schedule';
-import { SchedulePageRoutingModule } from './schedule-routing.module';
+import { ColetasPage } from './coletas';
+import { ColetasPageRoutingModule } from './coletas-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SchedulePageRoutingModule
+    ColetasPageRoutingModule
   ],
   declarations: [
-    SchedulePage
+    ColetasPage
   ],
   entryComponents: [
-    SchedulePage
+    ColetasPage
   ]
 })
-export class ScheduleModule { }
+export class ColetasModule { }

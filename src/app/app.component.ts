@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   appPages = [
     {
       title: 'Cadastro de coletas',
-      url: '/app/tabs/schedule',
+      url: '/app/tabs/coletas',
       icon: 'create'
     },
     {
