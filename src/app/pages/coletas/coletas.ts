@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { ColetasOptions } from '../../interfaces/coletas-options';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'page-coletas',
@@ -15,7 +16,8 @@ export class ColetasPage implements OnInit {
   valorTemp: any[] = [];
   constructor(
     private http: HttpClient,
-    public router: Router
+    public router: Router,
+    public alertCtrl: AlertController
   ) { }
 
   ngOnInit() {
@@ -24,7 +26,7 @@ export class ColetasPage implements OnInit {
     }
   }
 
-  onRegister(form: NgForm) {
+  async onRegister(form: NgForm) {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
@@ -42,7 +44,18 @@ export class ColetasPage implements OnInit {
       this.valorTemp.push(this.coletas);
       window.localStorage.removeItem('Coletas');
       window.localStorage.setItem('Coletas', JSON.stringify(this.valorTemp));
-      this.router.navigateByUrl('/app/tabs/coletas');
+
+      const alert = await this.alertCtrl.create({
+        message: 'Coleta cadastrada com sucesso!',
+        buttons: [
+          {
+            text: 'Ok'
+          }
+        ]
+      });
+      await alert.present();
+
+      this.router.navigateByUrl('/app/tabs/cadasto');
     }
   }
 }
