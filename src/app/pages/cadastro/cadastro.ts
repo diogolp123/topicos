@@ -15,8 +15,11 @@ export class CadastroPage implements OnInit {
 
   constructor(public popoverCtrl: PopoverController) { }
 
-  ngOnInit() {
+  ionViewWillEnter() {
     this.valores = JSON.parse(window.localStorage.getItem('Coletas'));
+  }
+
+  ngOnInit() {
   }
 
 }

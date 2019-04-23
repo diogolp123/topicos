@@ -31,7 +31,7 @@
             </ion-row>
         </ion-grid>
 
-      <ion-item-group *ngFor="let valor of valores">
+      <ion-item-group *ngFor="let valor of valores" (onCreate)="ngOnInit()">
 
           <ion-grid>
               <ion-row> 

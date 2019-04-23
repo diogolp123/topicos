@@ -2,9 +2,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 import { ColetasOptions } from '../../interfaces/coletas-options';
-import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'page-coletas',
@@ -49,13 +49,16 @@ export class ColetasPage implements OnInit {
         message: 'Coleta cadastrada com sucesso!',
         buttons: [
           {
-            text: 'Ok'
+            text: 'Ok',
+            handler: () => {
+              this.router.navigateByUrl('/app/tabs/cadastro');
+            }
           }
         ]
       });
       await alert.present();
 
-      this.router.navigateByUrl('/app/tabs/cadasto');
+
     }
   }
 }
