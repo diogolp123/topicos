@@ -10,12 +10,16 @@ export class SaveDataProvider {
     }
 
     saveLocalData(register: RegisterModel) {
+
         this.storage.get('registrations').then(data => {
-            if(data == null) {
-                var values: any[] = [];
+
+            if (data == null) {
+
+                const values: any[] = [];
                 values.push(register);
                 this.storage.set('registrations', values);
             } else {
+
                 data.push(register);
                 this.storage.set('registrations', data);
             }
