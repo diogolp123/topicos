@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Lista de coletas</ion-title>
+    <ion-title>Lista de Cadastros</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,38 +11,38 @@
   <div class="about-header">
     <img src="assets/img/ionic-logo-white.svg" alt="ionic logo">
   </div>
-  <div padding class="about-info">
-    <h4>Ionic Conference</h4>
 
-    <ion-list #coletasList>
+  <div padding class="about-info">
+
+    <ion-list #registerList>
 
         <ion-grid>
             <ion-row> 
               <ion-col size="6">
                   <ion-label>
-                    Volume
+                    Login
                   </ion-label>
               </ion-col>
               <ion-col size="6">
                   <ion-label>
-                    Temperatura
+                    Password
                   </ion-label>
               </ion-col>
             </ion-row>
         </ion-grid>
 
-      <ion-item-group *ngFor="let valor of valores" (onCreate)="ngOnInit()">
+      <ion-item-group *ngFor="let value of values" (onCreate)="ngOnInit()">
 
           <ion-grid>
               <ion-row> 
                 <ion-col size="6">
                     <ion-label>
-                        {{valor.volume}}
+                        {{value.login}}
                     </ion-label>
                 </ion-col>
                 <ion-col size="6">
                     <ion-label>
-                        {{valor.temperatura}}
+                        {{value.password}}
                     </ion-label>
                 </ion-col>
               </ion-row>

@@ -14,13 +14,13 @@ import { Storage } from '@ionic/storage';
 export class AppComponent implements OnInit {
   appPages = [
     {
-      title: 'Cadastro de coletas',
-      url: '/app/tabs/coletas',
+      title: 'Cadastro de usuários',
+      url: '/app/tabs/register',
       icon: 'create'
     },
     {
-      title: 'Lista de coletas',
-      url: '/app/tabs/cadastro',
+      title: 'Lista de cadastros',
+      url: '/app/tabs/list',
       icon: 'thermometer'
     }
   ];

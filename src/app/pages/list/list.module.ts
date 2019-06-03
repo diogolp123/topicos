@@ -3,18 +3,18 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
-import { CadastroPage } from './cadastro';
-import { CadastroPageRoutingModule } from './cadastro-routing.module';
+import { ListPage } from './list';
+import { ListPageRoutingModule } from './list-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CadastroPageRoutingModule
+    ListPageRoutingModule
   ],
-  declarations: [CadastroPage],
+  declarations: [ListPage],
   entryComponents: [],
-  bootstrap: [CadastroPage],
+  bootstrap: [ListPage],
 })
-export class CadastroModule {}
+export class ListModule {}

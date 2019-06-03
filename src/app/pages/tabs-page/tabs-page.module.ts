@@ -5,15 +5,15 @@ import { IonicModule } from '@ionic/angular';
 import { TabsPage } from './tabs-page';
 import { TabsPageRoutingModule } from './tabs-page-routing.module';
 
-import { CadastroModule } from '../cadastro/cadastro.module';
-import { ColetasModule } from '../coletas/coletas.module';
+import { ListModule } from '../list/list.module';
+import { RegisterModule } from '../register/register.module';
 
 @NgModule({
   imports: [
-    CadastroModule,
+    ListModule,
     CommonModule,
     IonicModule,
-    ColetasModule,
+    RegisterModule,
     TabsPageRoutingModule
   ],
   declarations: [
