@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { SaveDataProvider } from '../../providers/save-data';
+import { DataProvider } from '../../providers/save-data';
 import { RegisterModel } from '../../interfaces/register-model';
 
 @Component({
@@ -17,7 +17,7 @@ export class RegisterPage implements OnInit {
   constructor(
     private router: Router,
     private alertCtrl: AlertController,
-    private  saveDataProvider: SaveDataProvider
+    private  dataProvider: DataProvider
   ) { }
 
   ngOnInit() {
@@ -25,7 +25,7 @@ export class RegisterPage implements OnInit {
 
   async onRegister(form: NgForm) {
     if (form.valid) {
-      this.saveDataProvider.saveLocalData(this.register);
+      this.dataProvider.saveLocalData(this.register);
       const alert = await this.alertCtrl.create({
         message: 'Usuário cadastrada com sucesso!',
         buttons: [

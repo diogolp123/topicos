@@ -7,7 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { IonicModule } from '@ionic/angular';
 import { IonicStorageModule } from '@ionic/storage';
 
-import { SaveDataProvider } from './providers/save-data';
+import { DataProvider } from './providers/save-data';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -25,7 +25,7 @@ import { environment } from '../environments/environment';
     })
   ],
   declarations: [AppComponent],
-  providers: [InAppBrowser, SplashScreen, StatusBar, SaveDataProvider],
+  providers: [InAppBrowser, SplashScreen, StatusBar, DataProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

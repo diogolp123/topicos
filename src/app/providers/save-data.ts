@@ -4,7 +4,7 @@ import { RegisterModel } from '../interfaces/register-model';
 import { isNull } from '@angular/compiler/src/output/output_ast';
 
 @Injectable()
-export class SaveDataProvider {
+export class DataProvider {
 
     constructor(public storage: Storage) {
     }

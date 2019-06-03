@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { RegisterModel } from '../../interfaces/register-model';
-import { SaveDataProvider } from '../../providers/save-data';
+import { DataProvider } from '../../providers/save-data';
 
 @Component({
   selector: 'page-list',
@@ -11,10 +11,10 @@ import { SaveDataProvider } from '../../providers/save-data';
 export class ListPage implements OnInit {
   values: RegisterModel[] = [];
 
-  constructor(private popoverCtrl: PopoverController, private saveDataProvider: SaveDataProvider) { }
+  constructor(private popoverCtrl: PopoverController, private dataProvider: DataProvider) { }
 
   ionViewWillEnter() {
-    this.saveDataProvider.recoverLocalData().then(data => {
+    this.dataProvider.recoverLocalData().then(data => {
       this.values = data;
     });
   }
