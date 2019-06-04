@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { Badge } from '@ionic-native/badge/ngx';
 
 @NgModule({
   imports: [
@@ -25,7 +26,7 @@ import { environment } from '../environments/environment';
     })
   ],
   declarations: [AppComponent],
-  providers: [InAppBrowser, SplashScreen, StatusBar, DataProvider],
+  providers: [InAppBrowser, SplashScreen, StatusBar, DataProvider, Badge],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

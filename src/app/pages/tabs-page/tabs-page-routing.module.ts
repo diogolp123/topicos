@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs-page';
-import { RegisterPage } from '../register/register';
-
 
 const routes: Routes = [
   {
@@ -14,7 +12,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            component: RegisterPage,
+            loadChildren: '../register/register.module#RegisterModule',
           }
         ]
       },
@@ -26,11 +24,6 @@ const routes: Routes = [
             loadChildren: '../list/list.module#ListModule'
           }
         ]
-      },
-      {
-        path: '',
-        redirectTo: '/app/tabs/register',
-        pathMatch: 'full'
       }
     ]
   }

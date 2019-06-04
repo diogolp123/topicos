@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { DataProvider } from '../../providers/save-data';
 import { RegisterModel } from '../../interfaces/register-model';
+import { Badge } from '@ionic-native/badge/ngx';
 
 @Component({
   selector: 'page-register',
@@ -17,7 +18,8 @@ export class RegisterPage implements OnInit {
   constructor(
     private router: Router,
     private alertCtrl: AlertController,
-    private  dataProvider: DataProvider
+    private  dataProvider: DataProvider,
+    private badge: Badge
   ) { }
 
   ngOnInit() {
@@ -33,6 +35,7 @@ export class RegisterPage implements OnInit {
             text: 'Ok',
             handler: () => {
               form.reset();
+              this.badge.increase(1);
               this.router.navigateByUrl('/app/tabs/list');
             }
           }
